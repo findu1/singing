@@ -1,4 +1,5 @@
 #!/bin/sh
 
 exec 2>&1
+exec sed -i "s|PORT|${PORT}|g;s|SecretPATH|${SecretPATH}" /workdir/nginx.conf 
 exec nginx -c /workdir/nginx.conf 
